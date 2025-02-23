@@ -1,0 +1,89 @@
+[
+  {
+    "route": "/users",
+    "method": "POST",
+    "description": "Create a new user",
+    "body": {
+      "full_name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+1234567890",
+      "rfid_tag": "ABC123",
+      "car_brand": "Tesla",
+      "car_model": "Model 3"
+    },
+    "expectedOutput": {
+      "user_id": 1,
+      "full_name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+1234567890",
+      "rfid_tag": "ABC123",
+      "car_brand": "Tesla",
+      "car_model": "Model 3",
+      "created_at": "2023-05-20T10:00:00Z"
+    }
+  },
+  {
+    "route": "/users",
+    "method": "GET",
+    "description": "Get all users",
+    "body": {},
+    "expectedOutput": [
+      {
+        "user_id": 1,
+        "full_name": "John Doe",
+        "email": "john@example.com",
+        "phone": "+1234567890",
+        "rfid_tag": "ABC123",
+        "car_brand": "Tesla",
+        "car_model": "Model 3",
+        "created_at": "2023-05-20T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "route": "/users/1",
+    "method": "GET",
+    "description": "Get a user by ID",
+    "body": {},
+    "expectedOutput": {
+      "user_id": 1,
+      "full_name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+1234567890",
+      "rfid_tag": "ABC123",
+      "car_brand": "Tesla",
+      "car_model": "Model 3",
+      "created_at": "2023-05-20T10:00:00Z"
+    }
+  },
+  {
+    "route": "/users/1",
+    "method": "PUT",
+    "description": "Update a user",
+    "body": {
+      "full_name": "John Updated",
+      "email": "john.updated@example.com",
+      "phone": "+1987654321"
+    },
+    "expectedOutput": {
+      "user_id": 1,
+      "full_name": "John Updated",
+      "email": "john.updated@example.com",
+      "phone": "+1987654321",
+      "rfid_tag": "ABC123",
+      "car_brand": "Tesla",
+      "car_model": "Model 3",
+      "created_at": "2023-05-20T10:00:00Z"
+    }
+  },
+  {
+    "route": "/users/1",
+    "method": "DELETE",
+    "description": "Delete a user",
+    "body": {},
+    "expectedOutput": {
+      "message": "User deleted successfully"
+    }
+  }
+]
+

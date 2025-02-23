@@ -1,0 +1,45 @@
+[
+  {
+    "route": "/wallets",
+    "method": "POST",
+    "description": "Create a new wallet",
+    "body": {
+      "user_id": 1,
+      "balance": 100.0,
+      "currency": "USD"
+    },
+    "expectedOutput": {
+      "wallet_id": 1,
+      "user_id": 1,
+      "balance": 100.0,
+      "currency": "USD"
+    }
+  },
+  {
+    "route": "/wallets/user/1",
+    "method": "GET",
+    "description": "Get wallet by user ID",
+    "body": {},
+    "expectedOutput": {
+      "wallet_id": 1,
+      "user_id": 1,
+      "balance": 100.0,
+      "currency": "USD"
+    }
+  },
+  {
+    "route": "/wallets/1",
+    "method": "PUT",
+    "description": "Update wallet balance",
+    "body": {
+      "balance": 150.0
+    },
+    "expectedOutput": {
+      "wallet_id": 1,
+      "user_id": 1,
+      "balance": 150.0,
+      "currency": "USD"
+    }
+  }
+]
+
